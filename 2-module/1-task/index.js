@@ -1,3 +1,4 @@
 function sumSalary(salaries) {
-  // ваш код...
+  const salariesArr = Object.values(salaries).filter(prop => Number.isFinite(prop));
+  return salariesArr.reduce((total, salary) => total + salary, 0);
 }
