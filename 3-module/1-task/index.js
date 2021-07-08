@@ -1,3 +1,5 @@
 function namify(users) {
-  // ваш код...
+  const names = [];
+  users.forEach(prop => names.push(prop.name));
+  return names;
 }
