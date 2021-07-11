@@ -1,5 +1,3 @@
 function namify(users) {
-  const names = [];
-  users.forEach(prop => names.push(prop.name));
-  return names;
+  return users.map(prop => prop.name);
 }
