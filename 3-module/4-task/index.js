@@ -1,16 +1,14 @@
 function showSalary(users, age) {
-  const foundUsers = [];
   let list = "";
 
-  users.forEach((user) => {
-    if (user.age <= age) {
-      foundUsers.push(user.name);
-      foundUsers.push(user.balance);
-    }
-  });
+  const foundUsers = users
+    .filter((user) => user.age <= age)
+    .map((user) => {
+      return [user.name, user.balance];
+    });
 
   if (foundUsers.length) {
-    foundUsers.forEach((elem, i, arr) => {
+    foundUsers.flat().forEach((elem, i, arr) => {
       if (i === 0) {
         list += `'${elem}, `;
       } else if (i % 2 === 0) {
